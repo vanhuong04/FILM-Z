@@ -1,0 +1,62 @@
+@use "../utilities/index" as ut;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    width: 143px;
+    height: 37px;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: Righteous;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: all 1s linear;
+
+    a {
+      padding: 2px 20px;
+      color: #fff;
+      font-family: "Open Sans";
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      transition: all 0.2s linear;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: ut.$bg-hover-color;
+        color: black;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__search {
+    display: inline-block;
+
+    input {
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      width: 250px;
+      border-radius: 3px;
+      height: 30px;
+    }
+    i {
+      color: red;
+      width: 30px;
+    }
+  }
+}

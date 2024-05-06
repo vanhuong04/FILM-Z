@@ -1,0 +1,131 @@
+@use "../../utilities/index" as ut;
+.slider {
+  margin-top: 77px;
+
+  &__body {
+    display: flex;
+    gap: 16px;
+    border-radius: 10px;
+    transition: all 0.8s linear;
+  }
+  &__item {
+    width: calc(50% - 16px);
+    height: 373px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &__content {
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    border-radius: 0px 10px 10px 0px;
+    background: rgba(16, 16, 16, 0.3);
+    backdrop-filter: blur(2px);
+    padding: 21px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    // align-items: flex-end;
+  }
+
+  &__header {
+    p {
+      color: #fff;
+      font-family: "Open Sans";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+
+  &__sub {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px; /* 138.462% */
+    margin-bottom: 14px;
+  }
+
+  &__desc {
+    p {
+      max-width: 231px;
+      color: #fff;
+      font-family: "Open Sans";
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px; /* 138.462% */
+      height: 145px;
+      overflow: hidden;
+    }
+  }
+
+  &__botton {
+    button {
+      flex-shrink: 0;
+      border-radius: 20px;
+      background-color: ut.$button-color;
+      outline: none;
+      border: none;
+      color: #fff;
+      font-family: "Open Sans";
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    height: 373px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  &__prev {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: ut.$button-color;
+    border-radius: 100rem;
+    padding: 5px;
+    z-index: 5;
+    top: 50%;
+    left: 3%;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+
+  &__next {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: ut.$button-color;
+    border-radius: 100rem;
+    padding: 5px;
+    z-index: 5;
+    top: 50%;
+    right: 3%;
+    // transform: translateX(0%);
+    cursor: pointer;
+  }
+}
