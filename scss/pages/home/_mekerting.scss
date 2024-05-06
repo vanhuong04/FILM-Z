@@ -1,0 +1,46 @@
+.mekerting {
+  display: flex;
+  //   align-items: center;
+  background: linear-gradient(180deg, rgba(5, 59, 163, 0) 0%, #053ba3 100%);
+  margin-top: 139px;
+  padding: 75px;
+
+  &__title {
+    color: #fff;
+    font-family: "Nunito";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 106px;
+  }
+
+  &__desc {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 115% */
+    max-width: 900px;
+    margin-bottom: 60px;
+  }
+
+  &__button {
+    button {
+      padding: 5px 15px;
+      color: #000;
+      font-family: "Open Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 23px; /* 127.778% */
+      background-color: white;
+      outline: none;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  }
+}

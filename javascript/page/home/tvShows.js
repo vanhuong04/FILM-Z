@@ -5,8 +5,8 @@ let gapWidth
 let width
 let positionX = 0
 let idx = 0
-export async function action() {
-    const api = await homeApi.getByGenre('hanh-dong', {
+export async function TV() {
+    const api = await homeApi.getFilms('tv-shows', {
         params: {
             page: 0,
             limit: 10
@@ -14,31 +14,32 @@ export async function action() {
     })
 
     const animeApi = api.data.items
-    const body = document.querySelector('.action__body')
+    console.log(animeApi);
+    const body = document.querySelector('.TV__body')
     animeApi.forEach(async (film) => {
 
         const infoFilm = await homeApi.getInfoFilm(film.slug)
         const template = `
-        <div class="action__item">
-            <div class="action__content">
-                <div class="action__title">
-                    <div class="action__name"><p>${film.name}</p></div>
-                    <div class="action__year"><p>${film.year}</p></div>
+        <div class="TV__item">
+            <div class="TV__content">
+                <div class="TV__title">
+                    <div class="TV__name"><p>${film.name}</p></div>
+                    <div class="TV__year"><p>${film.year}</p></div>
                 </div>
-                <div class="action__button"><button>Xem ngay</button></div>
+                <div class="TV__button"><button>Xem ngay</button></div>
             </div>
-            <img class="action__img" src="${infoFilm.movie.poster_url}" alt="" />
+            <img class="TV__img" src="${infoFilm.movie.poster_url}" alt="" />
         </div>      
         `
         body.innerHTML += template
 
     });
     setTimeout(() => {
-        wrappes = document.querySelectorAll('.action__item')
-        main = document.querySelector('.action__body')
+        wrappes = document.querySelectorAll('.TV__item')
+        main = document.querySelector('.TV__body')
         gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
         width = wrappes[0].offsetWidth + gapWidth
-    }, 2000)
+    }, 3000)
     next()
     prev()
 
@@ -47,7 +48,7 @@ export async function action() {
 
 // next
 export async function next() {
-    const next = document.querySelector('.action__next')
+    const next = document.querySelector('.TV__next')
     next.addEventListener('click', () => {
         handleClick(1)
     })
@@ -55,7 +56,7 @@ export async function next() {
 
 // prev
 export async function prev() {
-    const next = document.querySelector('.action__prev')
+    const next = document.querySelector('.TV__prev')
     next.addEventListener('click', () => {
         handleClick(-1)
     })

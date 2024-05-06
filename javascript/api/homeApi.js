@@ -28,6 +28,11 @@ const homeApi = {
         return axiosClient.get(url, { params })
     },
 
+    getFilms(name, { params }) {
+        const url = `/v1/api/danh-sach/${name}`
+        return axiosClient.get(url, { params })
+    },
+
 
 }
 

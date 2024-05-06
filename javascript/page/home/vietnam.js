@@ -38,7 +38,6 @@ export async function vietnam() {
         main = document.querySelector('.vietnam__body')
         gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
         width = wrappes[0].offsetWidth + gapWidth
-        console.log(wrappes)
     }, 2000)
     next()
     prev()

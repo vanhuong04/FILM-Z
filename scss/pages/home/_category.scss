@@ -1,0 +1,184 @@
+@use "../../utilities/index" as ut;
+
+.category {
+  margin-top: 111px;
+
+  &__header {
+    cursor: default;
+
+    p {
+      color: #fff;
+      font-family: "Nunito";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: capitalize;
+      margin-bottom: 13px;
+    }
+  }
+
+  &__Body {
+    display: grid;
+    grid-template-columns: 2fr 12fr;
+    gap: 30px;
+  }
+
+  &__sidebar {
+    max-height: 600px;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  &__active {
+    background: linear-gradient(
+      270deg,
+      #053ba3 0%,
+      rgba(5, 59, 163, 0.22) 100%
+    );
+  }
+
+  &__menu {
+    width: 100%;
+    cursor: pointer;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    &:hover {
+      background: linear-gradient(
+        270deg,
+        #053ba3 0%,
+        rgba(5, 59, 163, 0.22) 100%
+      );
+    }
+  }
+
+  &__main {
+    margin-top: 43px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__seenAll {
+    a {
+      color: ut.$button-color;
+    }
+  }
+
+  &__title {
+    color: #fff;
+    font-family: Nunito;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    cursor: default;
+  }
+
+  &__desc {
+    margin-bottom: 56px;
+    max-width: 961px;
+    cursor: default;
+
+    p {
+      color: #fff;
+      font-family: "Open Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    transition: all 0.3s linear;
+  }
+
+  &__item {
+    cursor: pointer;
+    width: calc(100% / 4 - 28px);
+    height: 379px;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.05s linear;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 19px;
+    padding-bottom: 36px;
+    background: rgba(16, 16, 16, 0.29);
+    backdrop-filter: blur(2px);
+  }
+
+  &__name {
+    font-family: "Bangers";
+    color: #fff;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__year {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__button {
+    button {
+      outline: none;
+      border: none;
+      width: 89px;
+      height: 28px;
+      flex-shrink: 0;
+      background-color: ut.$button-color;
+      color: #fff;
+      font-family: "Open Sans";
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  }
+}
