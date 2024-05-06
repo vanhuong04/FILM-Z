@@ -13,32 +13,43 @@ export async function action() {
         }
     })
 
-    const animeApi = api.data.items
     const body = document.querySelector('.action__body')
-    animeApi.forEach(async (film) => {
-
+    const animeApi = api.data.items
+    const promises = await animeApi.map(async (film, idx) => {
         const infoFilm = await homeApi.getInfoFilm(film.slug)
-        const template = `
-        <div class="action__item">
-            <div class="action__content">
-                <div class="action__title">
-                    <div class="action__name"><p>${film.name}</p></div>
-                    <div class="action__year"><p>${film.year}</p></div>
-                </div>
-                <div class="action__button"><button>Xem ngay</button></div>
-            </div>
-            <img class="action__img" src="${infoFilm.movie.poster_url}" alt="" />
-        </div>      
-        `
-        body.innerHTML += template
 
-    });
-    setTimeout(() => {
-        wrappes = document.querySelectorAll('.action__item')
-        main = document.querySelector('.action__body')
-        gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
-        width = wrappes[0].offsetWidth + gapWidth
-    }, 2000)
+        return `
+        <div class="action__item">
+        <div class="action__content">
+            <div class="action__title">
+                <div class="action__name"><p>${film.name}</p></div>
+                <div class="action__year"><p>${film.year}</p></div>
+            </div>
+            <div class="action__button"><button>Xem ngay</button></div>
+        </div>
+        <img class="action__img" src="${infoFilm?.movie?.poster_url}" alt="" />
+    </div>      
+    `
+
+    })
+
+    const template = await Promise.all(promises)
+    template.forEach(film => {
+        body.innerHTML += film
+    })
+
+    wrappes = document.querySelectorAll('.action__item')
+    main = document.querySelector('.action__body')
+    gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
+    width = wrappes[0]?.offsetWidth + gapWidth
+
+    wrappes.forEach((film, idx) => {
+        film.addEventListener('click', async () => {
+
+            window.location.href = './playFilm.html';
+            localStorage.setItem('slug', animeApi[idx].slug)
+        })
+    })
     next()
     prev()
 

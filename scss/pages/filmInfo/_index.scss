@@ -1,0 +1,103 @@
+@use "../../utilities/index" as ut;
+@forward "./related";
+
+.playFilm {
+  margin-top: 60px;
+  &__top {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__thumnail {
+    position: relative;
+    width: 300px;
+    height: 400px;
+  }
+
+  &__button {
+    gap: 0px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__buttonTop {
+    display: flex;
+    align-items: center;
+  }
+
+  &__trailer {
+    button {
+      width: 150px;
+      padding: 10px 5px;
+      cursor: pointer;
+      background-color: greenyellow;
+      outline: none;
+      border: none;
+      color: white;
+      font-size: 15px;
+    }
+  }
+
+  &__dowload {
+    button {
+      width: 150px;
+      padding: 10px 5px;
+      cursor: no-drop;
+      background-color: rosybrown;
+      outline: none;
+      border: none;
+      color: white;
+      font-size: 15px;
+    }
+  }
+
+  &__seen {
+    width: 100%;
+    button {
+      width: 300px;
+      padding: 10px 5px;
+      cursor: pointer;
+      background-color: ut.$button-color;
+      outline: none;
+      border: none;
+      color: white;
+      font-size: 15px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    p {
+      font-size: 30px;
+      font-weight: 600;
+      color: ut.$button-color;
+    }
+  }
+
+  &__group2 {
+    display: flex;
+    gap: 7px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__name {
+    p {
+      color: ut.$button-color;
+    }
+  }
+
+  &__noidung {
+    max-width: 900px;
+  }
+
+  &__dienvien {
+    max-width: 900px;
+  }
+}

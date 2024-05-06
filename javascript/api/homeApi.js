@@ -33,6 +33,11 @@ const homeApi = {
         return axiosClient.get(url, { params })
     },
 
+    getContentFilm(name) {
+        const url = `/phim/${name}`
+        return axiosClient.get(url)
+    },
+
 
 }
 

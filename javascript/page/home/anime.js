@@ -2,13 +2,16 @@ import homeApi from "../../api/homeApi";
 let item
 let conent
 export async function anime() {
-    const api = await homeApi.getAnime('limit=7')
-    const animeApi = api.data.items
-    const body = document.querySelector('.anime__body')
-    animeApi.forEach(async (film) => {
+    document.addEventListener('DOMContentLoaded', async () => {
+        const api = await homeApi.getAnime('limit=7')
+        const animeApi = api.data.items
+        const body = document.querySelector('.anime__body')
+        console.log(animeApi);
 
-        const infoFilm = await homeApi.getInfoFilm(film.slug)
-        const template = `
+        const promises = await animeApi.map(async (film, idx) => {
+            const infoFilm = await homeApi.getInfoFilm(film.slug)
+
+            return `
         <div class="anime__item">
             <div class="anime__content none">
                 <div class="anime__title">
@@ -20,11 +23,15 @@ export async function anime() {
             <img class="anime__img" src="${infoFilm.movie.poster_url}" alt="" />
         </div>       
         `
-        body.innerHTML += template
 
-    });
+        })
 
-    setTimeout(() => {
+        const template = await Promise.all(promises)
+        template.forEach(film => {
+            body.innerHTML += film
+        })
+
+
         item = document.querySelectorAll('.anime__item')
         conent = document.querySelectorAll('.anime__content')
         item[0]?.classList.add('anime__full-with')
@@ -42,5 +49,16 @@ export async function anime() {
                 conent[idx].classList.remove('none')
             })
         })
-    }, 2000)
+
+
+        item.forEach((film, idx) => {
+            film.addEventListener('click', async () => {
+
+                window.location.href = './playFilm.html';
+                localStorage.setItem('slug', animeApi[idx].slug)
+            })
+        })
+    })
+
 }
+
