@@ -38,7 +38,6 @@ const homeApi = {
         return axiosClient.get(url)
     },
 
-
 }
 
 export default homeApi

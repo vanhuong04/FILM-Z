@@ -15,6 +15,7 @@ export async function vietnam() {
 
     const body = document.querySelector('.vietnam__body')
     const animeApi = api.data.items
+
     const promises = await animeApi.map(async (film, idx) => {
         const infoFilm = await homeApi.getInfoFilm(film.slug)
 

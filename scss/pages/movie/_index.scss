@@ -1,0 +1,34 @@
+@use "../../utilities/index" as ut;
+@use "./related";
+
+.movie {
+  margin-top: 50px;
+  &__count {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  &__item {
+    margin-top: 15px;
+    background-color: ut.$button-color;
+    display: flex;
+    align-items: center;
+    // display: inline-block;
+    // padding: 3px 9px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    min-width: 60px;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-size: 40px;
+    color: ut.$button-color;
+  }
+}

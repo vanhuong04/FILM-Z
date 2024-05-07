@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+
+    <link rel="stylesheet" href="./scss/pages/category/_index.scss" />
+    <link rel="stylesheet" href="./scss/main.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <!-- HEADER -->
+      <header class="header">
+        <!-- logo -->
+        <div class="header__logo"><p>FILM-Z</p></div>
+
+        <!-- nav -->
+        <nav class="header__nav">
+          <a href="./index.html" class="header__item">Trang chủ</a>
+          <a class="header__item" data-category="phim-le">Phim Lẻ</a>
+          <a class="header__item" data-category="phim-bo">Phim Bộ</a>
+          <a class="header__item data-hinh" data-category="hoat-hinh"
+            >Hoạt Hình</a
+          >
+          <a class="header__item data-tv" data-category="tv-shows">TV Shows</a>
+        </nav>
+
+        <!-- search -->
+        <div class="header__search">
+          <input
+            type="search"
+            placeholder="Tìm kiếm phim, thể loại, diễn viên..."
+          />
+        </div>
+
+        <!-- body -->
+      </header>
+      <main>
+        <!-- top film Hành động -->
+        <div class="Category">
+          <div class="Category__header"><p></p></div>
+          <div class="Category__body"></div>
+          <div class="Category__footer">
+            <button>Xem Thêm</button>
+          </div>
+        </div>
+
+        <!-- mekerting -->
+        <div class="mekerting">
+          <div class="mekerting__right">
+            <div class="mekerting__title"><p>Xem Ở Mọi Nơi</p></div>
+            <div class="mekerting__desc">
+              <p>
+                Bạn có thể tìm thấy mọi thứ liên quan đến phim ở đây. Hãy không
+                có giới hạn. Bạn có thể duyệt mọi nơi trên điện thoại, máy tính
+                bảng, máy tính xách tay. Bạn có thể linh hoạt. Bạn cũng có thể
+                sử dụng ứng dụng của chúng tôi ngoại tuyến.
+              </p>
+            </div>
+            <div class="mekerting__button"><button>Bắt Đầu Thôi</button></div>
+          </div>
+          <div class="mekerting__left">
+            <img src="./public/Mockup.png" alt="" />
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+          <div class="footer__title"><p>Kết nối với chúng tôi</p></div>
+          <div class="footer__flex">
+            <div class="footer__group">
+              <div class="footer__icon">
+                <img src="./public/Instagram.png" alt="" />
+              </div>
+              <div class="footer__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="58"
+                  height="58"
+                  viewBox="0 0 58 58"
+                  fill="none"
+                >
+                  <g filter="url(#filter0_d_14_20)">
+                    <circle
+                      cx="29"
+                      cy="25"
+                      r="25"
+                      fill="#393939"
+                      fill-opacity="0.51"
+                      shape-rendering="crispEdges"
+                    />
+                  </g>
+                  <path
+                    d="M35 21.35H30.981V19.25C30.981 18.1665 31.0768 17.484 32.763 17.484H34.8928V14.145C33.8564 14.0463 32.8143 13.998 31.7711 14.0001C28.6779 14.0001 26.4204 15.7399 26.4204 18.934V21.35H23V25.55L26.4204 25.549V35H30.981V25.5469L34.4767 25.5458L35 21.35Z"
+                    fill="#0075FF"
+                  />
+                  <defs>
+                    <filter
+                      id="filter0_d_14_20"
+                      x="0"
+                      y="0"
+                      width="58"
+                      height="58"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dy="4" />
+                      <feGaussianBlur stdDeviation="2" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_14_20"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_14_20"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div class="footer__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="58"
+                  height="58"
+                  viewBox="0 0 58 58"
+                  fill="none"
+                >
+                  <g filter="url(#filter0_d_14_25)">
+                    <circle
+                      cx="29"
+                      cy="25"
+                      r="25"
+                      fill="#393939"
+                      fill-opacity="0.51"
+                      shape-rendering="crispEdges"
+                    />
+                  </g>
+                  <path
+                    d="M39 15C38.22 15.5787 36.655 16.3674 35.735 16.5949C35.708 16.6036 35.686 16.6149 35.66 16.6236C34.847 15.6212 33.733 15 32.5 15C30.015 15 28 17.5186 28 20.6246C28 20.7884 27.989 21.0896 28 21.2496C24.647 21.2496 22.095 19.0547 20.265 16.2499C20.066 16.8749 19.979 17.8623 19.979 18.7898C19.979 20.5409 21.074 22.2608 22.779 23.327C22.465 23.4282 22.119 23.5007 21.759 23.5007C21.178 23.5007 20.563 23.3095 20 22.7295C20 22.7508 20 22.7708 20 22.7933C20 25.2406 22.078 26.9068 23.926 27.3705C23.551 27.6467 22.795 27.6742 22.426 27.6742C22.166 27.6742 21.246 27.5255 21 27.468C21.514 29.4741 23.368 30.6015 25.135 30.6415C23.753 31.9964 22.794 32.4989 19.964 32.4989H19C20.788 33.9313 23.065 35 25.347 35C32.777 35 37 27.9217 37 21.2496C37 21.1421 36.998 20.9171 36.995 20.6909C36.995 20.6684 37 20.6471 37 20.6246C37 20.5909 36.992 20.5584 36.992 20.5247C36.989 20.3547 36.986 20.1959 36.983 20.1134C37.773 19.401 38.458 18.5123 39 17.4998C38.275 17.9023 37.497 18.1723 36.68 18.2948C37.514 17.6698 38.699 16.1799 39 15Z"
+                    fill="#00B2FF"
+                  />
+                  <defs>
+                    <filter
+                      id="filter0_d_14_25"
+                      x="0"
+                      y="0"
+                      width="58"
+                      height="58"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dy="4" />
+                      <feGaussianBlur stdDeviation="2" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_14_25"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_14_25"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div class="footer__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="58"
+                  height="58"
+                  viewBox="0 0 58 58"
+                  fill="none"
+                >
+                  <g filter="url(#filter0_d_14_30)">
+                    <circle
+                      cx="29"
+                      cy="25"
+                      r="25"
+                      fill="#393939"
+                      fill-opacity="0.51"
+                      shape-rendering="crispEdges"
+                    />
+                  </g>
+                  <path
+                    d="M20.2 17C18.9845 17 18 17.8391 18 18.875V30.125C18 31.1609 18.9845 32 20.2 32H37.8C39.0155 32 40 31.1609 40 30.125V18.875C40 17.8391 39.0155 17 37.8 17H20.2ZM21.9574 18.875H36.0426L29 22.625L21.9574 18.875ZM21.3 21.3378L29 25.4375L36.7 21.3378V30.125H21.3V21.3378Z"
+                    fill="#FF0303"
+                  />
+                  <defs>
+                    <filter
+                      id="filter0_d_14_30"
+                      x="0"
+                      y="0"
+                      width="58"
+                      height="58"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dy="4" />
+                      <feGaussianBlur stdDeviation="2" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_14_30"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_14_30"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="./javascript/page/category/category.js"></script>
+  </body>
+</html>

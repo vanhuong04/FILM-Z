@@ -12,44 +12,58 @@ export async function slider() {
         const newFilm = api.items
         const body = document.querySelector('.slider__body')
 
-        newFilm.forEach(async (film) => {
-            const infoApi = await homeApi.getInfoFilm(film.slug)
-            const infoFilm = infoApi.movie
-            const template = `
-        <div class="slider__item">
-        <div class="slider__content">
-        <div class="slider__top">
-        <div class="slider__header">
-        <p>${film.name}</p>
-        </div>
-                    <div class="slider__sub">
-                        <p>Date Release: 21 October 2022</p>
-                    </div>
-                    <div class="slider__desc">
-                        <p>
-                        ${infoFilm.content}
-                        </p>
-                        </div>
-                </div>
-                
-                <div class="slider__botton">
-                <button>Thêm thông tin</button>
-                </div>
-                </div>
-                <div class="slider__img">
-                <img src="${film.thumb_url}" alt="" />
-                </div>
-        </div>
-        `
-            body.innerHTML += template
-        });
-        setTimeout(() => {
-            wrappes = document.querySelectorAll('.slider__item')
-            main = document.querySelector('.slider__body')
-            gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
-            width = wrappes[0]?.offsetWidth + gapWidth
-        }, 2000)
+        const promises = await newFilm.map(async (film, idx) => {
+            const infoFilm = await homeApi.getInfoFilm(film.slug)
+            const info = infoFilm.movie
 
+
+            return `
+            <div class="slider__item">
+            <div class="slider__content">
+            <div class="slider__top">
+            <div class="slider__header">
+            <p>${film.name}</p>
+            </div>
+                        <div class="slider__sub">
+                            <p>Date Release: 21 October 2022</p>
+                        </div>
+                        <div class="slider__desc">
+                            <p>
+                            ${info.content}
+                            </p>
+                            </div>
+                    </div>
+                    
+                    <div class="slider__botton">
+                    <button>Thêm thông tin</button>
+                    </div>
+                    </div>
+                    <div class="slider__img">
+                    <img src="${film.thumb_url}" alt="" />
+                    </div>
+            </div>
+        `
+
+        })
+
+        const template = await Promise.all(promises)
+        template.forEach(film => {
+            body.innerHTML += film
+        })
+
+
+        wrappes = document.querySelectorAll('.slider__item')
+        main = document.querySelector('.slider__body')
+        gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
+        width = wrappes[0]?.offsetWidth + gapWidth
+
+        wrappes.forEach((film, idx) => {
+            film.addEventListener('click', async () => {
+
+                window.location.href = './playFilm.html';
+                localStorage.setItem('slug', newFilm[idx].slug)
+            })
+        })
 
         prev()
         next()

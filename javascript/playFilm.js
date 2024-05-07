@@ -10,12 +10,13 @@ async function playFilm() {
     const playTheloai = document.querySelector('.playFilm__theloai > p')
     const playNoidung = document.querySelector('.playFilm__noidung> p')
     const trailer = document.querySelector('.playFilm__trailer a')
+    const seen = document.querySelector('.playFilm__seen ')
 
     const api = await homeApi.getContentFilm(localStorage.getItem('slug'))
     const dataApi = api.movie
     const category = dataApi.category
-    // console.log(category);
     related(category)
+    // console.log(api);
 
     playNoidung.textContent = dataApi.content
     playQuocgia.textContent = dataApi.country[0].name
@@ -27,9 +28,10 @@ async function playFilm() {
     console.log(dataApi.trailer_url);
     trailer.href = dataApi.trailer_url
 
-    // trailer.addEventListener('click', () => {
-    //     window.location.href = 
-    // })
+
+    seen.addEventListener('click', () => {
+        window.location.href = './playMovie.html'
+    })
 }
 
 (() => {

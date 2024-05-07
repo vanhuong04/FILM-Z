@@ -5,7 +5,7 @@ let gapWidth
 let width
 let positionX = 0
 let idx = 0
-export async function related(category) {
+export async function related2(category) {
     // console.log(category);
     const categoryList = category.map(async (cate, idx) => {
         const api = await homeApi.getByGenre(cate.slug, {
@@ -47,12 +47,12 @@ export async function related(category) {
     })
 
 
-    setTimeout(() => {
-        wrappes = document.querySelectorAll('.related__item')
-        main = document.querySelector('.related__body')
-        gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
-        width = wrappes[0]?.offsetWidth + gapWidth
-    }, 2000)
+
+    wrappes = document.querySelectorAll('.related__item')
+    main = document.querySelector('.related__body')
+    gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
+    width = wrappes[0]?.offsetWidth + gapWidth
+
     next()
     prev()
 
