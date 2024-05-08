@@ -37,7 +37,7 @@ export async function search() {
             item.forEach((i, idx) => {
                 i.addEventListener('click', () => {
                     localStorage.setItem('slug', data[idx].slug)
-                    window.location.href = './playFilm.html'
+                    window.location.href = '../playFilm.html'
                 })
             })
         }

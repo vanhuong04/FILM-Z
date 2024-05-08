@@ -31,7 +31,7 @@ async function playFilm() {
 
 
     seen.addEventListener('click', () => {
-        window.location.href = './playMovie.html'
+        window.location.href = '../playMovie.html'
     })
 }
 

@@ -56,7 +56,7 @@ export async function related(category) {
     wrappes.forEach((film, idx) => {
         film.addEventListener('click', async () => {
             console.log('hi');
-            window.location.href = './playFilm.html';
+            window.location.href = '../../../playFilm.html';
             localStorage.setItem('slug', arrSlug[idx].slug)
         })
     })
