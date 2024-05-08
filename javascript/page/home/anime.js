@@ -12,7 +12,7 @@ export async function anime() {
             const infoFilm = await homeApi.getInfoFilm(film.slug)
 
             return `
-        <a href="../../../index.html" class="anime__item">
+        <a href="../../../playFilm.html" class="anime__item">
             <div class="anime__content none">
                 <div class="anime__title">
                     <div class="anime__name"><p>${film.name}</p></div>
