@@ -12,7 +12,7 @@ export async function anime() {
             const infoFilm = await homeApi.getInfoFilm(film.slug)
 
             return `
-        <div class="anime__item">
+        <a href="../../../playFilm.html" class="anime__item">
             <div class="anime__content none">
                 <div class="anime__title">
                     <div class="anime__name"><p>${film.name}</p></div>
@@ -21,7 +21,7 @@ export async function anime() {
                 <div class="anime__button"><button>Xem ngay</button></div>
             </div>
             <img class="anime__img" src="${infoFilm.movie.poster_url}" alt="" />
-        </div>       
+        </a>       
         `
 
         })
@@ -53,7 +53,7 @@ export async function anime() {
 
         item.forEach((film, idx) => {
             film.addEventListener('click', async () => {
-                window.location.href = '../../../playFilm.html';
+                // window.location.href = '../../../playFilm.html';
                 localStorage.setItem('slug', animeApi[idx].slug)
             })
         })
