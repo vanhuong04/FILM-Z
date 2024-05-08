@@ -38,6 +38,11 @@ const homeApi = {
         return axiosClient.get(url)
     },
 
+    getSearch(name, { params }) {
+        const url = `/v1/api/tim-kiem?keyword=${name}`
+        return axiosClient.get(url, { params })
+    },
+
 }
 
 export default homeApi

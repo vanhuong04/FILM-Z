@@ -5,6 +5,7 @@ import { category } from "./page/home/category"
 import { slider } from "./page/home/slider"
 import { TV } from "./page/home/tvShows"
 import { vietnam } from "./page/home/vietnam"
+import { search } from "./search"
 
 
 
@@ -16,4 +17,5 @@ import { vietnam } from "./page/home/vietnam"
     category()
     TV()
     header2()
+    // search()
 })()

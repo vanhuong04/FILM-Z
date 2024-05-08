@@ -81,6 +81,7 @@ export async function movieList() {
                     limit: 30
                 }
             })
+            console.log('1');
         } else if (test === '2') {
 
             api = await homeApi.getFilms(localStorage.getItem('category'), {
@@ -89,6 +90,7 @@ export async function movieList() {
                     limit: 30
                 }
             })
+            console.log('2');
         }
         window.scrollTo({
             top: 0,
@@ -116,7 +118,7 @@ export async function movieList() {
     })
 }
 
-movieList()
+// movieList()
 
 
 

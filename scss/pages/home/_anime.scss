@@ -27,7 +27,7 @@
     height: 361px;
     flex-shrink: 0;
     position: relative;
-    transition: all 0.05s linear;
+    transition: all 0.15s ease-out;
   }
 
   &__full-with {
@@ -45,6 +45,17 @@
     border-radius: 10px;
     overflow: hidden;
     z-index: 1;
+    // border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.7;
+    transition-duration: 0.7s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: transform;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__content {
