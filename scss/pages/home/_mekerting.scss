@@ -44,3 +44,28 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .mekerting {
+    margin-top: 30px;
+    padding: 20px;
+
+    &__title {
+      color: #fff;
+      font-family: "Nunito";
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    &__desc {
+      color: #fff;
+      font-family: "Open Sans";
+      font-size: 8px;
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+}

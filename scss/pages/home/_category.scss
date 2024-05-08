@@ -199,3 +199,63 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .category {
+    margin-top: 20px;
+    &__item {
+      width: 50%;
+      height: 180px;
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__content {
+      display: none;
+    }
+
+    &__list {
+      overflow-x: auto;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s linear;
+      scrollbar-width: none;
+    }
+
+    &__sidebar {
+      max-height: 350px;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+
+    &__Body {
+      gap: 10px;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__desc {
+      margin-bottom: 20px;
+      p {
+        font-size: 10px;
+      }
+    }
+
+    &__menu {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      font-size: 8px;
+    }
+
+    &__seenAll {
+      a {
+        font-size: 9px;
+      }
+    }
+  }
+}

@@ -109,3 +109,37 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .anime {
+    margin-top: 50px;
+    &__item {
+      cursor: pointer;
+      width: 70px;
+      height: 180px;
+      flex-shrink: 0;
+      position: relative;
+      transition: all 0.15s ease-out;
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__content {
+      display: none;
+    }
+
+    &__body {
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    &__header {
+      margin-bottom: 9px;
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

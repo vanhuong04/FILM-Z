@@ -55,7 +55,7 @@ export async function slider() {
         wrappes = document.querySelectorAll('.slider__item')
         main = document.querySelector('.slider__body')
         gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
-        width = wrappes[0]?.offsetWidth + gapWidth
+        width = wrappes[0].offsetWidth + gapWidth
 
         wrappes.forEach((film, idx) => {
             film.addEventListener('click', async () => {

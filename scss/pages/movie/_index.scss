@@ -32,3 +32,20 @@
     color: ut.$button-color;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .movie {
+    iframe {
+      height: 200px;
+    }
+
+    &__title {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    &__count {
+      gap: 8px;
+    }
+  }
+}

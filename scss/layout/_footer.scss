@@ -14,3 +14,26 @@
     gap: 30px;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .footer {
+    padding: 20px;
+    &__title {
+      font-size: 13px;
+    }
+
+    &__icon {
+      height: 30px;
+      width: 30px;
+      svg {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    &__group {
+      margin-top: 10px;
+      gap: 15px;
+    }
+  }
+}

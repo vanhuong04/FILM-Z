@@ -142,3 +142,43 @@
     cursor: pointer;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .action {
+    margin-top: 20px;
+    &__item {
+      width: 35%;
+      height: 180px;
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__content {
+      display: none;
+    }
+
+    &__header {
+      margin-bottom: 9px;
+      p {
+        font-size: 12px;
+      }
+    }
+
+    &__body {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s linear;
+    }
+
+    &__prev {
+      display: none;
+    }
+
+    &__next {
+      display: none;
+    }
+  }
+}
