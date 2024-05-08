@@ -53,6 +53,14 @@ export async function related2(category) {
     gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
     width = wrappes[0]?.offsetWidth + gapWidth
 
+    wrappes.forEach((film, idx) => {
+        film.addEventListener('click', async () => {
+            console.log('hi');
+            window.location.href = './playFilm.html';
+            localStorage.setItem('slug', arrSlug[idx].slug)
+        })
+    })
+
     next()
     prev()
 

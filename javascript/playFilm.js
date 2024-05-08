@@ -18,6 +18,7 @@ async function playFilm() {
     related(category)
     // console.log(api);
 
+    document.title = dataApi.name
     playNoidung.textContent = dataApi.content
     playQuocgia.textContent = dataApi.country[0].name
     playThoigian.textContent = dataApi.time

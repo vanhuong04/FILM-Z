@@ -27,7 +27,9 @@ export async function movieList() {
         })
     }
 
+    console.log(api);
 
+    document.title = api.data.titlePage
     const body = document.querySelector('.Category__body')
     const title = document.querySelector('.Category__header > p')
     let animeApi = api.data.items

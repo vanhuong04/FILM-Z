@@ -11,7 +11,9 @@ async function movie() {
 
     title.textContent = `${api.movie.name} ${api.episodes[0].server_data[0].name || ''}`
     iframe.src = dataApi
-    iframe.poster = api.movie.thumb_url
+
+    document.title = `${api.movie.name} ${api.episodes[0].server_data[0].name || ''}`
+    // creat button chap 
     const count3 = count2.map((item, idx) => {
         return ` <div class="movie__item"><p>Tập ${idx + 1}</p></div>`
     })
@@ -25,6 +27,8 @@ async function movie() {
     count3.forEach(i => {
         count.innerHTML += i
     });
+
+    // handle even when click button to next chap 
     const countList = document.querySelectorAll('.movie__item')
     countList.forEach((item, idx) => {
         item.addEventListener('click', () => {

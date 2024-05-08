@@ -47,12 +47,19 @@ export async function related(category) {
     })
 
 
-    setTimeout(() => {
-        wrappes = document.querySelectorAll('.related__item')
-        main = document.querySelector('.related__body')
-        gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
-        width = wrappes[0]?.offsetWidth + gapWidth
-    }, 2000)
+
+    wrappes = document.querySelectorAll('.related__item')
+    main = document.querySelector('.related__body')
+    gapWidth = parseFloat(getComputedStyle(main).getPropertyValue('gap'));
+    width = wrappes[0]?.offsetWidth + gapWidth
+
+    wrappes.forEach((film, idx) => {
+        film.addEventListener('click', async () => {
+            console.log('hi');
+            window.location.href = './playFilm.html';
+            localStorage.setItem('slug', arrSlug[idx].slug)
+        })
+    })
     next()
     prev()
 

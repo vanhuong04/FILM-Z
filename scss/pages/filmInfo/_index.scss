@@ -5,7 +5,7 @@
   margin-top: 60px;
   &__top {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     gap: 30px;
   }
 
@@ -18,7 +18,7 @@
   &__button {
     gap: 0px;
     position: absolute;
-    bottom: -20px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -136,6 +136,8 @@
 
     &__top {
       gap: 10px;
+      display: flex;
+      flex-direction: column;
     }
 
     &__title {
