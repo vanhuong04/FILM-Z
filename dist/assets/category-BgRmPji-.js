@@ -1,0 +1,12 @@
+import{h as c}from"./search-E54o_GkR.js";let y,i;async function v(){let l=1;const a=localStorage.getItem("apiCategory");let t;console.log(a),a==="1"?t=await c.getByGenre(localStorage.getItem("category"),{params:{page:l,limit:30}}):a==="2"&&(t=await c.getFilms(localStorage.getItem("category"),{params:{page:l,limit:30}})),console.log(t),document.title=t.data.titlePage;const u=document.querySelector(".Category__body"),_=document.querySelector(".Category__header > p");let g=t.data.items;_.textContent=t.data.titlePage;const p=await g.map(async(e,n)=>{var o;const s=await c.getInfoFilm(e.slug);return`
+        <div class="Category__item">
+        <div class="Category__content">
+            <div class="Category__title">
+                <div class="Category__name"><p>${e.name}</p></div>
+                <div class="Category__year"><p>${e.year}</p></div>
+            </div>
+            <div class="Category__button"><button>Xem ngay</button></div>
+        </div>
+        <img class="Category__img" src="${(o=s==null?void 0:s.movie)==null?void 0:o.poster_url}" alt="" />
+    </div>      
+    `});(await Promise.all(p)).forEach(e=>{u.innerHTML+=e}),y=document.querySelectorAll(".Category__item"),y.forEach((e,n)=>{e.addEventListener("click",async()=>{window.location.href="./playFilm.html",localStorage.setItem("slug",g[n].slug||i[n].slug)})}),document.querySelector(".Category__footer > button").addEventListener("click",async()=>{l++,a==="1"?(t=await c.getByGenre(localStorage.getItem("category"),{params:{page:l,limit:30}}),console.log("1")):a==="2"&&(t=await c.getFilms(localStorage.getItem("category"),{params:{page:l,limit:30}}),console.log("2")),window.scrollTo({top:0,bahavior:"smooth"}),i=t.data.items;const e=document.querySelectorAll(".Category__name > p"),n=document.querySelectorAll(".Category__year > p"),s=document.querySelectorAll(".Category__img");i.forEach(async(o,r)=>{var d;const m=await c.getInfoFilm(o.slug);e[r].textContent=o.name,n[r].textContent=o.year,s[r].src=(d=m==null?void 0:m.movie)==null?void 0:d.poster_url}),y.forEach((o,r)=>{o.addEventListener("click",async()=>{localStorage.setItem("slug",i[r].slug||g[r].slug),window.location.href="./playFilm.html"})})})}function h(){document.querySelectorAll(".header__item").forEach((a,t)=>{a.addEventListener("click",()=>{window.location.href="./category.html",localStorage.setItem("category",a.dataset.category),localStorage.setItem("apiCategory","2")})})}h(),v();export{h};

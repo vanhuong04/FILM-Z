@@ -1,0 +1,12 @@
+import{h as p}from"./search-E54o_GkR.js";/* empty css             */let s,o,v,y,l=0,a=0;async function S(n){var r;const d=n.map(async(e,c)=>(await p.getByGenre(e.slug,{params:{page:0,limit:3}})).data.items),i=(await Promise.all(d)).flat(1/0),m=document.querySelector(".related__body"),u=i.map(async(e,c)=>{const t=await p.getInfoFilm(e.slug);return`
+        <div class="related__item">
+        <div class="related__content">
+        <div class="related__title">
+        <div class="related__name"><p>${e.name}</p></div>
+        <div class="related__year"><p>${e.year}</p></div>
+        </div>
+        <div class="related__button"><button>Xem ngay</button></div>
+        </div>
+        <img class="related__img" src="${t.movie.poster_url}" alt="" />
+        </div>        
+        `});(await Promise.all(u)).forEach(e=>{m.innerHTML+=e}),o=document.querySelectorAll(".related__item"),s=document.querySelector(".related__body"),v=parseFloat(getComputedStyle(s).getPropertyValue("gap")),y=((r=o[0])==null?void 0:r.offsetWidth)+v,o.forEach((e,c)=>{e.addEventListener("click",async()=>{console.log("hi"),window.location.href="../../../playFilm.html",localStorage.setItem("slug",i[c].slug)})}),x(),q()}async function x(){document.querySelector(".related__next").addEventListener("click",()=>{f(1)})}async function q(){document.querySelector(".related__prev").addEventListener("click",()=>{f(-1)})}function f(n){if(n===1){if(a>=o.length-5){a=o.length-5;return}a++,l=l-y,s.style=`transform: translateX(${l}px)`}if(n===-1){if(a<=0){a=0;return}a--,l=l+y,s.style=`transform: translateX(${l}px)`}}async function F(){const n=document.querySelector(".playFilm__title > p"),d=document.querySelector(".playFilm__avt"),_=document.querySelector(".playFilm__quocgia > p"),i=document.querySelector(".playFilm__thoigian> p"),m=document.querySelector(".playFilm__dienvien > p"),u=document.querySelector(".playFilm__theloai > p"),g=document.querySelector(".playFilm__noidung> p"),r=document.querySelector(".playFilm__trailer a"),e=document.querySelector(".playFilm__seen "),t=(await p.getContentFilm(localStorage.getItem("slug"))).movie,h=t.category;S(h),document.title=t.name,g.textContent=t.content,_.textContent=t.country[0].name,i.textContent=t.time,n.textContent=t.name,u.textContent=t.type,m.textContent=t.actor,d.src=t.poster_url,console.log(t.trailer_url),r.href=t.trailer_url,e.addEventListener("click",()=>{window.location.href="../playMovie.html"})}F();

@@ -1,0 +1,12 @@
+import{h as d}from"./search-E54o_GkR.js";/* empty css             */let m,i,S,y,a=0,n=0;async function $(e){var v;const u=e.map(async(t,o)=>(await d.getByGenre(t.slug,{params:{page:0,limit:3}})).data.items),s=(await Promise.all(u)).flat(1/0),r=document.querySelector(".related__body"),_=s.map(async(t,o)=>{const g=await d.getInfoFilm(t.slug);return`
+        <div class="related__item">
+        <div class="related__content">
+        <div class="related__title">
+        <div class="related__name"><p>${t.name}</p></div>
+        <div class="related__year"><p>${t.year}</p></div>
+        </div>
+        <div class="related__button"><button>Xem ngay</button></div>
+        </div>
+        <img class="related__img" src="${g.movie.poster_url}" alt="" />
+        </div>        
+        `});(await Promise.all(_)).forEach(t=>{r.innerHTML+=t}),i=document.querySelectorAll(".related__item"),m=document.querySelector(".related__body"),S=parseFloat(getComputedStyle(m).getPropertyValue("gap")),y=((v=i[0])==null?void 0:v.offsetWidth)+S,i.forEach((t,o)=>{t.addEventListener("click",async()=>{console.log("hi"),window.location.href="../../../playFilm.html",localStorage.setItem("slug",s[o].slug)})}),w(),q()}async function w(){document.querySelector(".related__next").addEventListener("click",()=>{h(1)})}async function q(){document.querySelector(".related__prev").addEventListener("click",()=>{h(-1)})}function h(e){if(e===1){if(n>=i.length-5){n=i.length-5;return}n++,a=a-y,m.style=`transform: translateX(${a}px)`}if(e===-1){if(n<=0){n=0;return}n--,a=a+y,m.style=`transform: translateX(${a}px)`}}async function L(){const e=await d.getContentFilm(localStorage.getItem("slug")),u=e.episodes[0].server_data[0].link_embed,p=document.querySelector(".iframe"),s=document.querySelector(".movie__count"),r=document.querySelector(".movie__title > p"),_=e.episodes[0].server_data;r.textContent=`${e.movie.name} ${e.episodes[0].server_data[0].name||""}`,p.src=u,document.title=`${e.movie.name} ${e.episodes[0].server_data[0].name||""}`;const f=_.map((l,c)=>` <div class="movie__item"><p>Tập ${c+1}</p></div>`),o=(await d.getContentFilm(localStorage.getItem("slug"))).movie.category;$(o),f.forEach(l=>{s.innerHTML+=l}),document.querySelectorAll(".movie__item").forEach((l,c)=>{l.addEventListener("click",()=>{const x=e.episodes[0].server_data[c].link_embed;p.src=x,r.textContent=`${e.movie.name} ${e.episodes[0].server_data[c].name||""}`})}),console.log(e)}L();
