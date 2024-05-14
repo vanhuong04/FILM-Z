@@ -1,4 +1,4 @@
-import homeApi from "../../api/homeApi";
+import homeApi from "../../api/homeApi.js";
 let item
 let conent
 export async function anime() {

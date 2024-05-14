@@ -1,4 +1,4 @@
-import { movieList } from "./movieListByCategory"
+import { movieList } from "./movieListByCategory.js"
 
 
 // import { header } from "../../main"

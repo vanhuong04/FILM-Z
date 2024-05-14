@@ -1,5 +1,5 @@
-import homeApi from "../../api/homeApi";
-import { related2 } from "./related";
+import homeApi from "../../api/homeApi.js";
+import { related2 } from "./related.js";
 
 async function movie() {
     const api = await homeApi.getContentFilm(localStorage.getItem('slug'))

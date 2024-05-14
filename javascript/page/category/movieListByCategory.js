@@ -1,4 +1,4 @@
-import homeApi from "../../api/homeApi";
+import homeApi from "../../api/homeApi.js";
 import { category } from "../home/category";
 let wrappes
 let animeApi2

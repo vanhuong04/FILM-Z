@@ -1,5 +1,5 @@
-import homeApi from "./api/homeApi"
-import { related } from "./page/playFilm/related"
+import homeApi from "./api/homeApi.js"
+import { related } from "./page/playFilm/related.js"
 
 async function playFilm() {
     const title = document.querySelector('.playFilm__title > p')

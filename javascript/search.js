@@ -1,4 +1,4 @@
-import homeApi from "./api/homeApi";
+import homeApi from "./api/homeApi.js";
 
 export async function search() {
     const search = document.querySelector('.header__search > input')

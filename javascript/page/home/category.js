@@ -1,4 +1,4 @@
-import homeApi from "../../api/homeApi";
+import homeApi from "../../api/homeApi.js";
 import { movieList } from "../category/movieListByCategory";
 let item
 let data2
